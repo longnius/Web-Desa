@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Budaya Desa</title>
+    <link rel="stylesheet" href="budaya.css">
+
+</head>
+<body>
+    <header>
+        <h1>Profil Budaya dan Ritus Desa</h1>
+    </header>
+    <a href="index.html" class="back-to-main">Kembali ke Halaman Utama</a>
+    <div class="container">
+        <div id="budaya-list" class="content">
+            <h2>Budaya Desa</h2>
+            <ul class="budaya-list">
+                <li onclick="showDetail('kembang-molja')">Sanggar Tari Kembang Molja</li>
+                <li onclick="showDetail('mamacah')">Kebudayaan Mamacah</li>
+                <li onclick="showDetail('salaran')">Kebudayaan Salaran</li>
+            </ul>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+        <div id="ritus-list" class="content">
+            <h2>Ritus Tradisional</h2>
+            <ul class="ritus-list">
+                <li onclick="showDetail('kadhisa')">Ritus Kadhisa</li>
+                <li onclick="showDetail('ojhung')">Ritus Ojhung</li>
+            </ul>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="kembang-molja" class="content" style="display: none;">
+            <h2>Sanggar Tari Kembang Molja</h2>
+            <div class="gallery">
+                <img src="budaya1.jpg" alt="Sanggar Tari Kembang Molja">
+            </div>
+            <p>    Sanggar tari Kembang Molja merupakan satu-satunya sanggar seni yang terdapat pada desa Bugeman, sanggar ini didirikan oleh ibu Wiwik Hendriyati sebagai upaya untuk menjaga kebudayaan desa Bugeman dan memperkaya kesenian desa Bugeman. Sanggar Seni Kembang Molja memiliki karya tari yang sangat mencirikan desa Bugeman seperti tari Parabhen Bugeman, Tari Bugeman, dan tari Ojhung. Ketiga tarian ini tari Ojhung. </p>
+            <p>Ketiga tarian ini mencerminkan kebudayaan dan penggambaran masyarakat desa Bugeman secara menyeluruh dari ritual yang dilakukan pada tiap tahunnya hingga penggambaran desa Bugeman yang subur dan kebiasaan yang dilakukan oleh masyarakat desa Bugeman.</p>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+        <div id="mamacah" class="content" style="display: none;">
+            <h2>Kebudayaan Mamacah</h2>
+            <div class="gallery">
+                <img src="budaya2.jpg" alt="Mamacah">
+            </div>
+            <p>Mamacah atau macapat merupakan salah satu kebudayaan asli dari madura yang tersebar di wilayah Tapal kuda khususnya Situbondo, pembacaan kitab mamacah biasanya dilakukan pada malam hingga dini hari dengan sesi pertama ialah pembacaan kitab dan penerjemahan kitab, dilanjut rokat, bahkan pernah terdapat orang yang meminta petunjuk kepada tuhan yang maha esa melalui pemilik manuskrip ini dengan melakukan oghem.</p>
+            <p>
+                Manuskrip mamacah ini terdapat eksemplar dengan penjelasan mengenai sirah rasul, sunah rasul, nasab rasul, dan perjuangan rasul. Kitab ini ditulis dengan menggunakan aksara arab dengan perpaduan bahasa jawa dan bahasa madura. Dari empat jilid kitab Nur Bhuwatterdapat satu kitab yang merupakan tulisan ulang dari tiga bagian manuskrip tersebut. </p>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+        <div id="salaran" class="content" style="display: none;">
+            <h2>Kebudayaan Salaran</h2>
+            <div class="gallery">
+                <img src="budaya3.jpg" alt="Salaran">
+            </div>
+            <p>Tujuh hari menjelang selamatan desa, biasanya dilakukan salaran atau yang dikenal dengan jimpitan berupa bahan pangan beras, telur, ayam, dan uang secara sukarelayang kemudian satu orang laki-laki di setiap kampung yang bertugas untuk mengumpulkan salaran. Kemudian hasil tersebut dikumpulkan di balai desa Bugeman, selain itu, terdapat istilah kemitan, kemitan adalah biaya yang dikeluarkan oleh masyarakat untuk diberikan kepada kepala desa. Sejak masa kepemimpinan kepala desa Udit Yuliasto kemitan ditiadakan.</p>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+        <div id="kadhisa" class="content" style="display: none;">
+            <h2>Ritus Kadhisa</h2>
+            <div class="gallery">
+                <img src="ritus1.jpg" alt="Kadhisa">
+            </div>
+            <p>Kadhisa berasal dari kata sedhekah dhisa yang berarti sedekah desa, adat ini sudah dilakukan secara turun temurun yang diadakan tiap tahun pada hari senin minggu terakhir di bulan maulid atau rabi’ul awal dan biasanya adat ini saling beriringan dengan adat ojhung, kadhisa diadakan di hari senin dan ojhung diadakan di hari selasa. Prosesi ini biasanya dibersamai dengan prosesi peringatan bulan maulud pada siang hari dan disambung pada sore harinya dengan penyerahan sesajen atau seserahan berupa hasil bumi yang disebut dengan onggha’an.</p>
+            <p>
+                Pembuatan sasandhing atau sesajen dilakukan di rumah kepala desa dengan terdiri dari 1 orang laki-laki dan 2 orang perempuan dengan tanpa berbicara dalam prosesi pembuatannya, dan dengan komposisi yang sudah ditentukan dan harus sesuai dengan arahan dari pemangku adat. Kemudian sasandhing yang sudah jadi diletakkan pada leghin atau tandu untuk prosesi seserahannya. Leghin yang digunakan harus selalu baru pada tiap tahunnya dan tidak boleh menggunakannya kembali di tahun depan. Setelah pembuatan sasandhing dan peletakan sasandhing dalam leghin dilanjut dengan prosesi arak – arakan yang dilakukan pada jam 3 sore menuju tempat penyontengan, tempat ini diyakini sebagai tempat tumbuhnya pohon bugem yang dipercaya sebagai  asal muasal desa Bugeman. 
+            </p>
+            <p>
+                Usai prosesi ritual tersebut dan pembacaan do’a dan dzikir dilanjutkan dengan pembawaan sebagian sasandhing ke rumah pemangku adat, pembawaan leghin  dilarang bercanda dan harus melakukannya dengan khidmat. Sesampainya di rumah pemangku adat kembali dilakukan pembacaan doa dan dzikir dan dilakukan tahlilan di rumah pemangku adat setelah maghrib.
+            </p>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+        <div id="ojhung" class="content" style="display: none;">
+            <h2>Ritus Ojhung</h2>
+            <div class="gallery">
+                <img src="ritus2.jpg" alt="Ojhung">
+            </div>
+            <p style="text-align: justify;">Sejarah ojhung di desa Bugeman erat kaitannya dengan cerita leluhur yang terdiri dari 17 orang juju’ yang datang dari arah timur. Beberapa diantaranya terdiri dari Ju’ arseni, Ju’ accem koro, Ju’ bhelimbing, Ju’ kendhel, kakek Budhu, Ju’ Bhina, Ju’ Saena, Ju’ Tilam, Ju’ Arjokusumo, Ju’ Sabirajhe, Kakek Tarona, Ju; Prang Baka, Ju’ Saeni, dan Ju’ Rabin. Mereka dibagi dalam beberapa daerah dengan misi membabat desa-desa di kecamatan Kendit.</p>
+            <p>
+                Ju’ Arseni memiliki beberapa anak salah duanya yaitu Ju’ Mode dan bapak Mudassir, ritus ojhung mulai dikenal pada masa Ju’ Mode, pada masa itu di desa Bugeman terjadi banyak kekerasan, kekeringan, dan paceklik yang berkepanjangan. Banyak anak kecil dan orang dewasa membawa celurit dan senjata tajam lain yang membahayakan. Kemudian Ju’ Arseni mengutus Ju’ Mode menuju Tanah wulan, disana terdapat gua yang tertutup batu. Goa tersebut bisa terbuka apabila didatangi oleh seseorang pada hari bersih, kemudian Ju’ Mode memohon kepada tuhan yang maha esa dengan nyepi dan bertapa agar diberi petunjuk agar masalah di desanya segera berakhir. Dari bertapa tersebut memperoleh hasil berupa arahan untuk selamatan desa berupa ritual kadhisa dan ojhung yang harus dilaksanakan pada hari senin di minggu terakhir pada bulan maulid.
+            </p>
+            <p>
+                Ojhung adalah praktik pertandingan dua orang yang saling adu pukul secara bergantian menggunakan alat berupa kayu rotan atau menjjhalin sebagai media pengganti senjata tajam. Tujuan dilakukannya ojhung agar tidak ada lagi kekerasan menggunakan senjata tajam yang mengakibatkan korban jiwa. Ojhung harus dilaksanakan di dusun Blangguan, sisi selatan jalan desa Bugeman tepat di lereng bukit. 
+            </p>
+            <div class="back-to-list" onclick="hideDetail()">Kembali</div>
+        </div>
+    </div>
+    <script>
+        function showDetail(detailId) {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.getElementById(detailId).style.display = 'block';
+        }
+
+        function hideDetail() {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.getElementById('budaya-list').style.display = 'block';
+            document.getElementById('ritus-list').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
