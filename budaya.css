@@ -1,79 +1,104 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #FAE5D3;
+    background-color: #fae5d3;
     margin: 0;
     padding: 0;
     text-align: center;
-}
-header {
-    background-color: #C19A6B;
+  }
+  header {
+    background-color: #c19a6b;
     color: white;
     padding: 20px;
     font-size: 24px;
-}
-.container {
+  }
+  .container {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 20px;
-}
-.content {
-    background: #FFF2E1;
+  }
+  .content {
+    background: #fff2e1;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #BCAAA4;
+    box-shadow: 0px 0px 10px #bcaaa4;
     width: 45%;
     min-height: 400px;
-    
-}
-.budaya-list, .ritus-list {
+  }
+  .budaya-list,
+  .ritus-list {
     list-style-type: none;
     padding: 0;
-}
-.budaya-list li, .ritus-list li {
-    background: #D7B899;
+  }
+  .budaya-list li,
+  .ritus-list li {
+    background: #d7b899;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    border-radius: 5px;}
-    
-    .gallery img {
-        width: 100%; /* Menyesuaikan dengan div */
-        max-width: 500px; /* Membatasi ukuran maksimum */
-        height: auto; /* Mencegah distorsi */
-        aspect-ratio: 4 / 3; /* Memastikan rasio tetap 4:3 agar tidak terlalu melebar */
-        object-fit: contain; /* Menampilkan gambar tanpa terpotong */
-        border-radius: 5px;
-        display: block; /* Menghindari space ekstra di bawah gambar */
-        margin: 0 auto; /* Membuat gambar tetap di tengah */
-    }
-    
-    
-.back-to-main {
+    border-radius: 5px;
+  }
+  
+  .gallery img {
+    width: 100%; /* Menyesuaikan dengan div */
+    max-width: 500px; /* Membatasi ukuran maksimum */
+    height: auto; /* Mencegah distorsi */
+    aspect-ratio: 4 / 3; /* Memastikan rasio tetap 4:3 agar tidak terlalu melebar */
+    object-fit: contain; /* Menampilkan gambar tanpa terpotong */
+    border-radius: 5px;
+    display: block; /* Menghindari space ekstra di bawah gambar */
+    margin: 0 auto; /* Membuat gambar tetap di tengah */
+  }
+  
+  .back-to-main {
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 10px 20px;
-    background-color: #C19A6B;
+    background-color: #c19a6b;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-}
-.back-to-main:hover {
-    background-color: #A67C52;
-}
-.back-to-list {
+  }
+  .back-to-main:hover {
+    background-color: #a67c52;
+  }
+  .back-to-list {
     display: inline-block;
     margin-top: 10px;
     cursor: pointer;
-    color: #8D6E63;
+    color: #8d6e63;
     font-weight: bold;
-}
-
-.content p {
+  }
+  
+  .content p {
     text-align: justify;
     line-height: 1.6; /* Menambah jarak antar baris */
     margin: 10px 0;
-}
+  }
+  @media (max-width: 768px) {
+    #tentang-kebudayaan {
+      width: 95%; /* Memperbesar div untuk tampilan mobile */
+      max-width: 100%;
+      font-size: 1.2em; /* Menyesuaikan ukuran font */
+      padding: 15px; /* Memberikan ruang agar lebih rapi */
+    }
+  
+    .container {
+      flex-direction: column; /* Agar tampilan lebih nyaman */
+      align-items: center;
+    }
+  
+    .content {
+      width: 100%; /* Membuat semua konten lebih luas */
+      padding: 10px;
+    }
+  
+    .gallery img {
+      width: 100%; /* Agar gambar tidak terlalu kecil */
+      height: auto;
+    }
+  }
+  
