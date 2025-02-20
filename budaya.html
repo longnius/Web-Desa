@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produk Desa</title>
+    <title>Budaya</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,352 +18,161 @@
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- My Style -->
-    <link rel="stylesheet" href="produk.css" />
-
-    <!-- Alpine JS -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script src="app.js"></script>
-
+    <link rel="stylesheet" href="budaya.css" />
   </head>
-
-
   <body>
-    <!-- Navbar start -->
-    <nav class="navbar" x-data>
-      <a href="#" class="navbar-logo">Kerajinan<span>Desa</span>.</a>
+    <!-- navbar Strat -->
+    <nav class="navbar">
+      <a href="#" @click.prevent class="navbar-logo"><span>Local </span>Culture.</a>
 
-      <div class="navbar-nav" x-data>
+      <div class="navbar-nav">
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
-        <a href="#menu">Kerajinan</a>
-        <a href="#products">Produk</a>
-        <a href="#contact">Kontak</a>
-      </div>
-
-      <div class="navbar-extra">
-        <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i >
-        <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
-        </a>
-        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
-      </div>
-
-      <!-- Search Form start -->
-      <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here..." />
-        <label for="search-box"><i data-feather="search"></i></label>
-      </div>
-      <!-- Search Form end -->
-
-      <!-- Shopping Cart start -->
-      <div class="shopping-cart" >
-        <template x-for="(item, index) in $store.cart.items" x-keys = 'index'>
-        <div class="cart-item">
-          <img :src="`${item.img}`" :alt="item.name">          
-          <div class="item-detail">
-            <h3 x-text ='item.name'></h3>
-            <div class="item-price">
-              <span x-text="rupiah(item.price)"></span> &times;
-              <button id="remove"@click="$store.cart.remove(item.id)">&minus;</button>
-              <span x-text ='item.quantity'></span>
-              <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
-              <span x-text="rupiah(item.total)"></span>
-            </div>
-          </div>
+        <a href="#budaya">Budaya</a>
+        <a href="#ritus">Ritus </a>
         </div>
-      </template>
-      <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">card is empaty</h4>
-      <h4 x-show="$store.cart.items.length">Total <span x-text="rupiah($store.cart.total)"></span></h4>
 
-      <div class="form-container" x-show="$store.cart.items.length">
-        <form action="" id="checkoutForm"></form>
-        <h5>Customer Detail</h5>
-
-        <label for="name">
-          <span>Name</span>
-          <input type="text" name="name" id="name">
-        </label>
-        <label for="email">
-          <span>Email</span>
-          <input type="email" name="email" id="email">
-        </label>
-        <label for="phone">
-          <span>Phone</span>
-          <input type="number" name="phone" id="phone" autocomplete="off">
-        </label>
-
-        <button class="checkout-button" type="submit" id="checkout-button" value="checkout">Checkout</button>
+        <div class="navbar-extra">
+          <a href="#" @click.prevent class id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
       </div>
-      </div>
-      <!-- Shopping Cart end -->
     </nav>
-    <!-- Navbar end -->
+    <!-- navbar end -->
 
-    <!-- Hero Section start -->
-    <section class="hero" id="home">
-      <div class="mask-container">
-        <main class="content">
-          <h1>Kerajinan Desa<span></span></h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Accusantium, enim.
-          </p>
-        </main>
+    <!-- hero section strat -->
+<section class="hero" id="home">
+  <main class="content">
+    <h1>Terus Lestarikan <span>Budaya</span></h1>
+    <p>Karena Budaya Tidak Lepas dari Idenstias Kita</p>
+  </main>
+</section>
+
+    <!-- hero section end -->
+
+<!-- about start -->
+   <section id="about" class="about">
+    <h2><span>Tentang </span>Kami</h2>
+
+    <div class="row">
+      <div class="about-img">
+        <img src="about-budaya.jpg" alt="Tentang Kami">
       </div>
-    </section>
-    <!-- Hero Section end -->
-
-    <!-- About Section start -->
-    <section id="about" class="about">
-      <h2><span>Tentang</span> Kami</h2>
-
-      <div class="row">
-        <div class="about-img">
-          <img src="about.jpg" alt="Tentang Kami" />
-        </div>
-        <div class="content">
-          <h3>Kenapa memilih kami?</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            ducimus voluptatum dolor. Et, voluptatum accusantium!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic
-            deserunt iure amet facilis eos a quo cum voluptates molestias nihil.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- About Section end -->
-
-    <!-- Menu Section start -->
-    <section id="menu" class="menu">
-      <h2><span>Kerajinan</span> Kami</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita,
-        repellendus numquam quam tempora voluptatum.
-      </p>
-
-      <div class="row">
-        <div class="menu-card">
-          <img src="produk-a1.jpg" alt="Plate" class="menu-card-img" />
-          <h3 class="menu-card-title">- Plate -</h3>
-          <p class="menu-card-price">IDR 20K</p>
-        </div>
-        <div class="menu-card">
-          <img src="produk-b1.jpg" alt="miniature surfingboard" class="menu-card-img" />
-          <h3 class="menu-card-title">- miniature surfingboard -</h3>
-          <p class="menu-card-price">IDR 30K</p>
-        </div>
-        <div class="menu-card">
-          <img src="produk-c1.jpg" alt="ashtray" class="menu-card-img" />
-          <h3 class="menu-card-title">- ashtray -</h3>
-          <p class="menu-card-price">IDR 10K</p>
-        </div>
-        </div>
-      </div>
-    </section>
-    <!-- Menu Section end -->
-
-    <!-- Products Section start -->
-    <section class="products" id="products" x-data="products">
-      <h2><span>Produk Unggulan</span> Kami</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo unde eum,
-        ab fuga possimus iste.
-      </p>
-
-      <div class="row">
-        <template x-for="(item,index) in items" x-key="index">
-        <div class="product-card">
-          <div class="product-icons">
-            <a href="#" @click.prevent="$store.cart.add(item)">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <use href="feather-sprite.svg#shopping-cart" />
-              </svg>
-            </a>
-            
-            <a href="#" @click.prevent class="item-detail-button"> 
-              <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#eye" />
-              </svg>
-            </a>
-          </div>
-          <div class="product-image">
-            <img :src="`${item.img}`" :alt="item.name">
-          </div>
-          <div class="product-content">
-            <h3 x-text="item.name"></h3>
-            <div class="product-stars">
-              <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#star" />
-              </svg>
-              <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#star" />
-              </svg>
-              <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#star" />
-              </svg>
-              <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#star" />
-              </svg>
-              <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <use href="feather-sprite.svg#star" />
-              </svg>
-            </div>
-            <div class="product-price"><span x-text="rupiah (item.price)"></span></div>
-          </div>
-        </div>
-      </template>
-      </div>
-    </section>
-    <!-- Products Section end -->
-
-    <!-- Contact Section start -->
-    <section id="contact" class="contact">
-      <h2><span>Kontak</span> Kami</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-        provident.
-      </p>
-
-      <div class="row">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63255.11541347143!2d113.92057020498669!3d-7.742563022571833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7280cce084533%3A0xd98da284fad502ab!2sBugeman%2C%20Kendit%2C%20Situbondo%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1739565596792!5m2!1sen!2sid" w
-         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-
-        <form action="">
-          <div class="input-group">
-            <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
-          </div>
-          <div class="input-group">
-            <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
-          </div>
-          <div class="input-group">
-            <i data-feather="phone"></i>
-            <input type="text" placeholder="no hp" />
-          </div>
-          <button type="submit" class="btn">kirim pesan</button>
-        </form>
-      </div>
-    </section>
-    <!-- Contact Section end -->
-
-    <!-- Footer start -->
-    <footer>
-      <div class="socials">
-        <a href="#"><i data-feather="instagram"></i></a>
-        <a href="#"><i data-feather="twitter"></i></a>
-        <a href="#"><i data-feather="facebook"></i></a>
-      </div>
-
-      <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#menu">Kerajinan</a>
-        <a href="#contact">Kontak</a>
-      </div>
-
-      <div class="credit">
-        <p>Created by <a href="">KKN20 Desa Bugeman</a>. | &copy; 2025.</p>
-      </div>
-    </footer>
-    <!-- Footer end -->
-
-    <!-- Modal Box Item Detail start -->
-    <div class="modal" id="item-detail-modal">
-      <div class="modal-container">
-        <a href="#" class="close-icon"><i data-feather="x"></i></a>
-        <div class="modal-content">
-          <img src="produk-a1.jpg" alt="Product 1" />
-          <div class="product-content">
-            <h3>Product 1</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Provident, tenetur cupiditate facilis obcaecati ullam maiores
-              minima quos perspiciatis similique itaque, esse rerum eius
-              repellendus voluptatibus!
-            </p>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-            <a href="#"
-              ><i data-feather="shopping-cart"></i> <span>add to cart</span></a>
-          </div>
-        </div>
+      <div class="content">
+        <h3>Desa Budaya</h3>
+        <p>Desa budaya adalah komunitas yang melestarikan warisan budaya lokal. Tradisi, kesenian, dan adat istiadat dijaga turun-temurun. Masyarakatnya rutin mengadakan upacara adat dan kegiatan budaya. Arsitektur, bahasa, serta kuliner khas menjadi identitas desa. Pemerintah sering mendukung desa budaya melalui pemberdayaan. Desa budaya merupakan bukti nyata kekayaan warisan bangsa.</p>
       </div>
     </div>
-    <!-- Modal Box Item Detail end -->
+  </section>
+<!-- about end -->
 
-    <!-- Feather Icons -->
+<!-- budaya start -->
+<section id="budaya" class="budaya">
+  <h2>Budaya <span>Kami</span></h2>
+  <p>Nilai budaya kita adalah prinsip dan norma yang diwariskan secara turun-temurun dalam masyarakat sebagai pedoman hidup. Nilai ini tercermin dalam tradisi, adat istiadat, kesenian, bahasa, serta cara berinteraksi sosial. Gotong royong, sopan santun, dan rasa hormat kepada orang tua adalah contoh nilai budaya yang dijunjung tinggi. Nilai-nilai tersebut membentuk identitas dan karakter bangsa, menjaga keharmonisan dalam kehidupan bermasyarakat. Dengan melestarikan nilai budaya, kita dapat mempertahankan jati diri serta memperkuat persatuan dan kesatuan.</p>
+  <div class="row">
+    <div class="budaya-card">
+      <div class="budaya-icons">
+        <a href="#budaya" @click.prevent class><i data-feather="eye"></i></a>
+      </div>
+      <div class="budaya-image">
+        <img src="budaya1.jpg" alt="budaya1">
+      </div>
+      <div class="budaya-content">
+        <h3>Sanggar Seni Kembang Molja</h3>
+        <p>Sanggar tari Kembang Molja merupakan satu-satunya sanggar seni yang terdapat pada desa Bugeman, sanggar ini didirikan oleh ibu Wiwik Hendriyati sebagai upaya untuk menjaga kebudayaan desa Bugeman dan memperkaya kesenian desa Bugeman. Sanggar Seni Kembang Molja memiliki karya tari yang sangat mencirikan desa Bugeman seperti tari Parabhen Bugeman, Tari Bugeman, dan tari Ojhung. Ketiga tarian ini tari Ojhung. Ketiga tarian ini mencerminkan kebudayaan dan penggambaran masyarakat desa Bugeman secara menyeluruh dari ritual yang dilakukan pada tiap tahunnya hingga penggambaran desa Bugeman yang subur dan kebiasaan yang dilakukan oleh masyarakat desa Bugeman.</p>
+      </div>
+    </div>
+    <div class="budaya-card">
+      <div class="budaya-icons">
+        <a href="#budaya" @click.prevent class><i data-feather="eye"></i></a>
+      </div>
+      <div class="budaya-image">
+        <img src="budaya2.jpg" alt="budaya1">
+      </div>
+      <div class="budaya-content">
+        <h3>Mamacah</h3>
+        <p>Mamacah atau macapat merupakan salah satu kebudayaan asli dari madura yang tersebar di wilayah Tapal kuda khususnya Situbondo, pembacaan kitab mamacah biasanya dilakukan pada malam hingga dini hari dengan sesi pertama ialah pembacaan kitab dan penerjemahan kitab, dilanjut rokat, bahkan pernah terdapat orang yang meminta petunjuk kepada tuhan yang maha esa melalui pemilik manuskrip ini dengan melakukan oghem.</p>
+        <p>Manuskrip mamacah ini terdapat eksemplar dengan penjelasan mengenai sirah rasul, sunah rasul, nasab rasul, dan perjuangan rasul. Kitab ini ditulis dengan menggunakan aksara arab dengan perpaduan bahasa jawa dan bahasa madura. Dari empat jilid kitab Nur Bhuwatterdapat satu kitab yang merupakan tulisan ulang dari tiga bagian manuskrip tersebut. salinan itu dibuat dengan tujuan untuk mengantisipasi hilang atau rusaknya kitab aslinya. Jenis kertas yang digunakan dalam manuskrip tersebut adalah jenis daluwang yang terbuat dari serat pohon saeh. Seluruh isi dari manuskrip tersebut ditulis menggunakan tangan dengan hasil yang presisi, dan manuskrip ini masih diturunkan secara turun temurun.</p>
+      </div>
+    </div>
+    <div class="budaya-card">
+      <div class="budaya-icons">
+        <a href="#budaya" @click.prevent class><i data-feather="eye"></i></a>
+      </div>
+      <div class="budaya-image">
+        <img src="budaya3.jpg" alt="budaya1">
+      </div>
+      <div class="budaya-content">
+        <h3>Salaran</h3>
+        <p>Tujuh hari menjelang selamatan desa, biasanya dilakukan salaran atau yang dikenal dengan jimpitan berupa bahan pangan beras, telur, ayam, dan uang secara sukarelayang kemudian satu orang laki-laki di setiap kampung yang bertugas untuk mengumpulkan salaran. Kemudian hasil tersebut dikumpulkan di balai desa Bugeman, selain itu, terdapat istilah kemitan, kemitan adalah biaya yang dikeluarkan oleh masyarakat untuk diberikan kepada kepala desa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- budaya end -->
+
+<!-- Ritus Start -->
+<section id="ritus" class="ritus">
+  <h2>Ritus <span>Kami</span></h2>
+  <p>Nilai ritus kita adalah nilai-nilai yang terkandung dalam upacara atau ritual yang dilakukan secara turun-temurun dalam masyarakat. Ritus ini sering berkaitan dengan keagamaan, kepercayaan, atau adat istiadat yang memiliki makna spiritual dan sosial. Contohnya adalah upacara pernikahan adat, ritual panen, dan peringatan hari besar keagamaan. Nilai dalam ritus mencerminkan rasa syukur, penghormatan kepada leluhur, serta kebersamaan dalam komunitas. Dengan menjaga nilai ritus, masyarakat dapat mempertahankan identitas budaya dan mempererat hubungan sosial.</p>
+  <div class="row">
+    <div class="ritus-card">
+      <div class="ritus-icons">
+        <a href="#ritus" @click.prevent class><i data-feather="eye"></i></a>
+      </div>
+      <div class="ritus-image">
+        <img src="ritus1.jpg" alt="ritus1">
+      </div>
+      <div class="ritus-content">
+        <h3>Kadhisa</h3>
+        <p>Kadhisa berasal dari kata sedhekah dhisa yang berarti sedekah desa, adat ini sudah dilakukan secara turun temurun yang diadakan tiap tahun pada hari senin minggu terakhir di bulan maulid atau rabi’ul awal dan biasanya adat ini saling beriringan dengan adat ojhung, kadhisa diadakan di hari senin dan ojhung diadakan di hari selasa. Prosesi ini biasanya dibersamai dengan prosesi peringatan bulan maulud pada siang hari dan disambung pada sore harinya dengan penyerahan sesajen atau seserahan berupa hasil bumi yang disebut dengan onggha’an.</p>
+        <p>
+          Pembuatan sasandhing atau sesajen dilakukan di rumah kepala desa dengan terdiri dari 1 orang laki-laki dan 2 orang perempuan dengan tanpa berbicara dalam prosesi pembuatannya, dan dengan komposisi yang sudah ditentukan dan harus sesuai dengan arahan dari pemangku adat. Kemudian sasandhing yang sudah jadi diletakkan pada leghin atau tandu untuk prosesi seserahannya. Leghin yang digunakan harus selalu baru pada tiap tahunnya dan tidak boleh menggunakannya kembali di tahun depan. Setelah pembuatan sasandhing dan peletakan sasandhing dalam leghin dilanjut dengan prosesi arak – arakan yang dilakukan pada jam 3 sore menuju tempat penyontengan, tempat ini diyakini sebagai tempat tumbuhnya pohon bugem yang dipercaya sebagai  asal muasal desa Bugeman.
+        </p>
+        <p>
+          Usai prosesi ritual tersebut dan pembacaan do’a dan dzikir dilanjutkan dengan pembawaan sebagian sasandhing ke rumah pemangku adat, pembawaan leghin  dilarang bercanda dan harus melakukannya dengan khidmat. Sesampainya di rumah pemangku adat kembali dilakukan pembacaan doa dan dzikir dan dilakukan tahlilan di rumah pemangku adat setelah maghrib.
+        </p>
+      </div>
+    </div>
+    <div class="ritus-card">
+      <div class="ritus-icons">
+        <a href="#rirus" @click.prevent class><i data-feather="eye"></i></a>
+      </div>
+      <div class="ritus-image">
+        <img src="ritus2.jpg" alt="ritus1">
+      </div>
+      <div class="ritus-content">
+        <h3>Ojhung</h3>
+        <p>Sejarah ojhung di desa Bugeman erat kaitannya dengan cerita leluhur yang terdiri dari 17 orang juju’ yang datang dari arah timur. Beberapa diantaranya terdiri dari Ju’ arseni, Ju’ accem koro, Ju’ bhelimbing, Ju’ kendhel, kakek Budhu, Ju’ Bhina, Ju’ Saena, Ju’ Tilam, Ju’ Arjokusumo, Ju’ Sabirajhe, Kakek Tarona, Ju; Prang Baka, Ju’ Saeni, dan Ju’ Rabin. Mereka dibagi dalam beberapa daerah dengan misi membabat desa-desa di kecamatan Kendit.</p>
+        <p>
+          Ju’ Arseni memiliki beberapa anak salah duanya yaitu Ju’ Mode dan bapak Mudassir, ritus ojhung mulai dikenal pada masa Ju’ Mode, pada masa itu di desa Bugeman terjadi banyak kekerasan, kekeringan, dan paceklik yang berkepanjangan. Banyak anak kecil dan orang dewasa membawa celurit dan senjata tajam lain yang membahayakan. Kemudian Ju’ Arseni mengutus Ju’ Mode menuju Tanah wulan, disana terdapat gua yang tertutup batu. Goa tersebut bisa terbuka apabila didatangi oleh seseorang pada hari bersih, kemudian Ju’ Mode memohon kepada tuhan yang maha esa dengan nyepi dan bertapa agar diberi petunjuk agar masalah di desanya segera berakhir. Dari bertapa tersebut memperoleh hasil berupa arahan untuk selamatan desa berupa ritual kadhisa dan ojhung yang harus dilaksanakan pada hari senin di minggu terakhir pada bulan maulid.
+        </p>
+        <p>
+          Ojhung adalah praktik pertandingan dua orang yang saling adu pukul secara bergantian menggunakan alat berupa kayu rotan atau menjjhalin sebagai media pengganti senjata tajam. Tujuan dilakukannya ojhung agar tidak ada lagi kekerasan menggunakan senjata tajam yang mengakibatkan korban jiwa. Ojhung harus dilaksanakan di dusun Blangguan, sisi selatan jalan desa Bugeman tepat di lereng bukit. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Ritus End -->
+
+<!-- box item start -->
+<div class="box" id="item-box">
+  <div class="box-containter">
+    <a href="#" @click.prevent class><i data-feather="x"></i></a>
+    <div class="modal-content">
+      <img src="" alt="box 1">
+    </div>
+  </div>
+</div>
+<!-- box item end-->
+
+    <!-- My Java -->
+    <script src="script.js"></script>
+
+    <!-- feater icon -->
     <script>
       feather.replace();
     </script>
-
-    <!-- My Javascript -->
-    <script src="script.js"></script>
   </body>
 </html>
