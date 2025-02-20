@@ -1,104 +1,348 @@
+:root {
+  --primary: #2f43a4;
+  --bg: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fae5d3;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 3000px;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("bg-budaya.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 8%,
+    rgba(1, 1, 3, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+/* about */
+.about,
+.budaya,
+.ritus {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.budaya h2,
+.ritus h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  color: rgba(1, 1, 3, 0.5);
+}
+
+.about h2 span,
+.budaya h2 span,
+.ritus span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: rgba(1, 1, 3, 0.5);
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgb(1, 1, 3);
+  text-align: justify;
+}
+/* budaya section*/
+.budaya h2,
+.ritus h2 {
+  margin-bottom: 1rem;
+}
+
+.budaya p,
+.ritus p {
+  text-align: justify;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1.2 rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: black;
+}
+
+.budaya .row,
+.ritus .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.budaya .budaya-card,
+.ritus .ritus-card {
+  text-align: center;
+  border: 1px solid #2f43a4;
+  padding: 2rem;
+}
+
+.budaya .budaya-icons,
+.ritus .ritus-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.budaya .budaya-icons a,
+.ritus .ritus-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #040404;
+  margin: 0.3;
+  border: 1px solid #2f43a4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budaya .budaya-icons a:hover,
+.ritus .ritus-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.budaya .budaya-image,
+.ritus .ritus-image {
+  padding: 1rem 0;
+}
+
+.budaya .budaya-image img,
+.ritus .ritus-image img {
+  height: 25rem;
+}
+
+.budaya .budaya-content,
+.ritus .ritus-content {
+  font-size: 1rem;
+  color: black;
+  font-weight: 300;
+}
+
+.budaya .budaya-content p,
+.ritus .ritus-content p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Media quaris */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
   }
-  header {
-    background-color: #c19a6b;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
+}
+
+/* tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62%;
   }
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  .content {
-    background: #fff2e1;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #bcaaa4;
-    width: 45%;
-    min-height: 400px;
-  }
-  .budaya-list,
-  .ritus-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  .budaya-list li,
-  .ritus-list li {
-    background: #d7b899;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .gallery img {
-    width: 100%; /* Menyesuaikan dengan div */
-    max-width: 500px; /* Membatasi ukuran maksimum */
-    height: auto; /* Mencegah distorsi */
-    aspect-ratio: 4 / 3; /* Memastikan rasio tetap 4:3 agar tidak terlalu melebar */
-    object-fit: contain; /* Menampilkan gambar tanpa terpotong */
-    border-radius: 5px;
-    display: block; /* Menghindari space ekstra di bawah gambar */
-    margin: 0 auto; /* Membuat gambar tetap di tengah */
-  }
-  
-  .back-to-main {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px 20px;
-    background-color: #c19a6b;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  .back-to-main:hover {
-    background-color: #a67c52;
-  }
-  .back-to-list {
+  #hamburger-menu {
     display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    color: #8d6e63;
-    font-weight: bold;
   }
-  
-  .content p {
-    text-align: justify;
-    line-height: 1.6; /* Menambah jarak antar baris */
-    margin: 10px 0;
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgb(41, 34, 118);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
   }
-  @media (max-width: 768px) {
-    #tentang-kebudayaan {
-      width: 95%; /* Memperbesar div untuk tampilan mobile */
-      max-width: 100%;
-      font-size: 1.2em; /* Menyesuaikan ukuran font */
-      padding: 15px; /* Memberikan ruang agar lebih rapi */
-    }
-  
-    .container {
-      flex-direction: column; /* Agar tampilan lebih nyaman */
-      align-items: center;
-    }
-  
-    .content {
-      width: 100%; /* Membuat semua konten lebih luas */
-      padding: 10px;
-    }
-  
-    .gallery img {
-      width: 100%; /* Agar gambar tidak terlalu kecil */
-      height: auto;
-    }
+
+  .navbar .navbar-nav.active {
+    right: 0;
   }
-  
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .ritus p,
+  .budaya p {
+    font-size: 1.2rem;
+  }
+}
+/* phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
